@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/blue">
+
+
+    <LinearLayout
+        android:id="@+id/whiteLay"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:background="@drawable/round_corner_white_backgroung"
+        android:orientation="vertical"
+        android:gravity="center">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:id="@+id/logoLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/logoImg"
+                android:layout_width="155dp"
+                android:layout_height="155dp"
+                app:srcCompat="@drawable/logo"
+                tools:srcCompat="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="POCKETNATURE"
+                android:layout_marginBottom="80dp"
+                android:textColor="@color/blue"
+                android:textSize="30sp" />
+
+            <RelativeLayout
+                android:id="@+id/loginData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_green_background"
+                android:padding="30dp">
+
+                <FrameLayout
+                    android:id="@+id/usernameLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <EditText
+                        android:id="@+id/username"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/round_corner_white"
+                        android:hint="username"
+                        android:paddingLeft="43dp"
+                        android:textColorHint="#4D000000" />
+
+                    <ImageView
+                        android:id="@+id/logoProfile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/round_corner_white"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/baseline_account_circle_24"
+                        tools:srcCompat="@drawable/baseline_account_circle_24" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/passwordLay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/usernameLay"
+                    android:layout_marginBottom="20dp">
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/round_corner_white"
+                        android:hint="password"
+                        android:paddingLeft="43dp"
+                        android:textColorHint="#4D000000" />
+
+                    <ImageView
+                        android:id="@+id/logoPassword"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/round_corner_white"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/baseline_lock_24"
+                        tools:srcCompat="@drawable/baseline_lock_24" />
+
+                </FrameLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/passwordLay"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/round_corner_blue"
+                    android:text="Login"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/forgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/login"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="Forgot your password?"
+                    android:textColor="@color/blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/forgotPassword"
+                    android:layout_centerHorizontal="true"
+                    android:text="Don't have an account?"
+                    android:textColor="@color/blue" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
