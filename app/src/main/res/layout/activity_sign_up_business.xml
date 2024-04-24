@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green"
-    tools:context=".signups.SignUpTouristActivity">
-
+    tools:context=".signups.SignUpBusinessActivity">
 
     <LinearLayout
         android:id="@+id/head"
@@ -55,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="TURISTA"
+                android:text="NEGOCIO"
                 android:textColor="@color/white" />
 
         </LinearLayout>
@@ -68,6 +67,8 @@
         android:layout_above="@+id/footer"
         android:layout_below="@+id/head"
         android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingStart="20dp"
@@ -76,17 +77,17 @@
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/round_corner_white"
-            android:hint="name"
+            android:hint="business name"
             android:paddingStart="20dp"
             android:textColorHint="#4D000000" />
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/round_corner_white"
             android:hint="email"
@@ -96,49 +97,80 @@
         <EditText
             android:id="@+id/phone"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/round_corner_white"
             android:hint="phone"
             android:paddingStart="20dp"
             android:textColorHint="#4D000000" />
 
-        <EditText
-            android:id="@+id/nationality"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/round_corner_white"
-            android:hint="nationality"
-            android:paddingStart="20dp"
-            android:textColorHint="#4D000000" />
-
-
         <FrameLayout
-            android:id="@+id/birthdayLay"
+            android:id="@+id/locationLay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp">
 
             <EditText
-                android:id="@+id/birthday"
+                android:id="@+id/location"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:background="@drawable/round_corner_white"
-                android:hint="birthday"
-                android:paddingLeft="43dp"
+                android:hint="location"
+                android:paddingLeft="40dp"
                 android:textColorHint="#4D000000" />
 
-            <ImageView
-                android:id="@+id/calendarLogo"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+            <ImageButton
+                android:id="@+id/locationBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@drawable/round_corner_white"
-                android:padding="5dp"
-                app:srcCompat="@drawable/baseline_calendar_month_24"
-                tools:srcCompat="@drawable/baseline_calendar_month_24" />
+                android:backgroundTint="@color/blue"
+                app:srcCompat="@drawable/baseline_account_circle_24"
+                tools:srcCompat="@drawable/baseline_location_on_24" />
 
         </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/sizeSpinner"
+            android:layout_below="@+id/upperBar"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:padding="10dp">
+
+            <org.osmdroid.views.MapView
+                android:id="@+id/osmMap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </org.osmdroid.views.MapView>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category: "
+                android:textColor="@color/blue"></TextView>
+
+            <Spinner
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/round_corner_white"
+                android:entries="@array/business"
+                android:paddingStart="20dp" />
+
+        </LinearLayout>
+
 
         <FrameLayout
             android:id="@+id/usernameLay"
@@ -149,7 +181,7 @@
             <EditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:background="@drawable/round_corner_white"
                 android:hint="username"
                 android:paddingLeft="43dp"
@@ -157,8 +189,8 @@
 
             <ImageView
                 android:id="@+id/logoProfile"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@drawable/round_corner_white"
                 android:padding="5dp"
                 app:srcCompat="@drawable/baseline_account_circle_24"
@@ -175,7 +207,7 @@
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:background="@drawable/round_corner_white"
                 android:hint="password"
                 android:paddingLeft="43dp"
@@ -183,8 +215,8 @@
 
             <ImageView
                 android:id="@+id/logoPassword"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@drawable/round_corner_white"
                 android:padding="5dp"
                 app:srcCompat="@drawable/baseline_lock_24"
@@ -196,9 +228,9 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/login"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:background="@drawable/round_corner_blue"
-            android:text="sign up"
+            android:text="next"
             android:textColor="@color/white" />
 
     </LinearLayout>
@@ -210,6 +242,5 @@
         android:orientation="vertical"
         android:layout_alignParentBottom="true">
     </LinearLayout>
-
 
 </RelativeLayout>

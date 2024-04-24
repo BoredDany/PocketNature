@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="business">
+        <item>Accommodation</item>
+        <item>Gastronomy</item>
+        <item>Art and culture</item>
+        <item>Tour packages</item>
+        <item>Shopping</item>
+    </string-array>
+</resources>

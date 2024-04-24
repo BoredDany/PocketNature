@@ -1,7 +1,8 @@
-package com.example.pocketnature
+package com.example.pocketnature.signups
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.pocketnature.R
 import com.example.pocketnature.databinding.ActivitySignUpTouristBinding
 
 class SignUpTouristActivity : AppCompatActivity() {

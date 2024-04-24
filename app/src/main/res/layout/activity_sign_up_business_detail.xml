@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green"
-    tools:context=".signups.SignUpTouristActivity">
-
+    tools:context=".signups.SignUpBusinessDetailActivity">
 
     <LinearLayout
         android:id="@+id/head"
@@ -55,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="TURISTA"
+                android:text="BUSINESS"
                 android:textColor="@color/white" />
 
         </LinearLayout>
@@ -73,124 +72,186 @@
         android:paddingStart="20dp"
         android:paddingEnd="20dp">
 
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/round_corner_white"
-            android:hint="name"
-            android:paddingStart="20dp"
-            android:textColorHint="#4D000000" />
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/round_corner_white"
-            android:hint="email"
-            android:paddingStart="20dp"
-            android:textColorHint="#4D000000" />
-
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/round_corner_white"
-            android:hint="phone"
-            android:paddingStart="20dp"
-            android:textColorHint="#4D000000" />
-
-        <EditText
-            android:id="@+id/nationality"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/round_corner_white"
-            android:hint="nationality"
-            android:paddingStart="20dp"
-            android:textColorHint="#4D000000" />
-
-
         <FrameLayout
-            android:id="@+id/birthdayLay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp">
 
             <EditText
-                android:id="@+id/birthday"
+                android:id="@+id/facebook"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
-                android:hint="birthday"
+                android:hint="Link to Facebook"
                 android:paddingLeft="43dp"
                 android:textColorHint="#4D000000" />
 
             <ImageView
-                android:id="@+id/calendarLogo"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
                 android:padding="5dp"
-                app:srcCompat="@drawable/baseline_calendar_month_24"
-                tools:srcCompat="@drawable/baseline_calendar_month_24" />
+                app:srcCompat="@drawable/facebook_icon"
+                tools:srcCompat="@drawable/facebook_icon" />
 
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/usernameLay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp">
 
             <EditText
-                android:id="@+id/username"
+                android:id="@+id/instagram"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
-                android:hint="username"
+                android:hint="Link to Instagram"
                 android:paddingLeft="43dp"
                 android:textColorHint="#4D000000" />
 
             <ImageView
-                android:id="@+id/logoProfile"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
                 android:padding="5dp"
-                app:srcCompat="@drawable/baseline_account_circle_24"
-                tools:srcCompat="@drawable/baseline_account_circle_24" />
+                app:srcCompat="@drawable/instagram_icon"
+                tools:srcCompat="@drawable/instagram_icon" />
 
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/passwordLay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp">
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/tiktok"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
-                android:hint="password"
+                android:hint="Link to Tik Tok"
                 android:paddingLeft="43dp"
                 android:textColorHint="#4D000000" />
 
             <ImageView
-                android:id="@+id/logoPassword"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
                 android:padding="5dp"
-                app:srcCompat="@drawable/baseline_lock_24"
-                tools:srcCompat="@drawable/baseline_lock_24" />
+                app:srcCompat="@drawable/tiktok_icon"
+                tools:srcCompat="@drawable/tiktok_icon" />
 
         </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <EditText
+                android:id="@+id/youtube"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner_white"
+                android:hint="Link to YouTube"
+                android:paddingLeft="43dp"
+                android:textColorHint="#4D000000" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner_white"
+                android:padding="5dp"
+                app:srcCompat="@drawable/youtube"
+                tools:srcCompat="@drawable/youtube" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <EditText
+                android:id="@+id/whatsapp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner_white"
+                android:hint="Link to WhatsApp"
+                android:paddingLeft="43dp"
+                android:textColorHint="#4D000000" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner_white"
+                android:padding="5dp"
+                app:srcCompat="@drawable/whatsapp_icon"
+                tools:srcCompat="@drawable/whatsapp_icon" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:textAlignment="center"
+                android:text="Load a photo: Your logo, your product / service ..."
+                android:textColor="@color/blue">
+            </TextView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+
+                <ImageButton
+                    android:id="@+id/cameraBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round_corner_white"
+                    android:backgroundTint="@color/blue"
+                    app:srcCompat="@drawable/baseline_account_circle_24"
+                    tools:srcCompat="@drawable/baseline_camera_alt_24"
+                    android:padding="20dp"/>
+
+                <ImageButton
+                    android:id="@+id/galleryBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round_corner_white"
+                    android:backgroundTint="@color/blue"
+                    app:srcCompat="@drawable/baseline_insert_photo_24"
+                    tools:srcCompat="@drawable/baseline_insert_photo_24"
+                    android:padding="20dp"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:scaleType="centerCrop"
+                android:background="@color/white"
+                android:padding="100dp"
+                app:srcCompat="@drawable/baseline_photo_size_select_actual_24">
+
+            </ImageView>
+
+        </LinearLayout>
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -210,6 +271,5 @@
         android:orientation="vertical"
         android:layout_alignParentBottom="true">
     </LinearLayout>
-
 
 </RelativeLayout>
