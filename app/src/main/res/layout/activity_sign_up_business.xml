@@ -78,7 +78,7 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="18dp"
             android:background="@drawable/round_corner_white"
             android:hint="business name"
             android:paddingStart="20dp"
@@ -88,7 +88,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="18dp"
             android:background="@drawable/round_corner_white"
             android:hint="email"
             android:paddingStart="20dp"
@@ -98,7 +98,7 @@
             android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="18dp"
             android:background="@drawable/round_corner_white"
             android:hint="phone"
             android:paddingStart="20dp"
@@ -108,7 +108,7 @@
             android:id="@+id/locationLay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="18dp">
 
             <EditText
                 android:id="@+id/location"
@@ -152,7 +152,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="18dp"
             android:orientation="horizontal">
 
             <TextView
@@ -176,7 +176,7 @@
             android:id="@+id/usernameLay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="18dp">
 
             <EditText
                 android:id="@+id/username"
@@ -202,7 +202,7 @@
             android:id="@+id/passwordLay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="18dp">
 
             <EditText
                 android:id="@+id/password"
