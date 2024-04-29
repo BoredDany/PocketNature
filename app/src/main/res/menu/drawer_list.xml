@@ -2,15 +2,35 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/myProfile"
-        android:icon="@drawable/baseline_account_circle_24"
-        android:title="My profile" />
+        android:id="@+id/Home"
+        android:icon="@drawable/baseline_home_blue"
+        android:title="Home" />
     <item
-        android:id="@+id/people"
-        android:icon="@drawable/baseline_calendar_month_24"
-        android:title="People" />
+        android:id="@+id/Sightings"
+        android:icon="@drawable/baseline_location_blue"
+        android:title="Sightings" />
     <item
-        android:id="@+id/settings"
-        android:icon="@drawable/baseline_location_on_24"
-        android:title="Settings" />
+        android:id="@+id/Species"
+        android:icon="@drawable/baseline_search_blue"
+        android:title="Species" />
+    <item
+        android:id="@+id/Events"
+        android:icon="@drawable/baseline_calendar_blue"
+        android:title="Events" />
+    <item
+        android:id="@+id/Places"
+        android:icon="@drawable/baseline_airplane_blue"
+        android:title="Places" />
+    <item
+        android:id="@+id/Cameras"
+        android:icon="@drawable/baseline_camera_blue"
+        android:title="Cameras" />
+    <item
+        android:id="@+id/Statistics"
+        android:icon="@drawable/baseline_analytics_blue"
+        android:title="Statistics" />
+    <item
+        android:id="@+id/Logout"
+        android:icon="@drawable/baseline_logout_blue"
+        android:title="Logout" />
 </menu>

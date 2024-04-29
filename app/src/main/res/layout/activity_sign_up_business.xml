@@ -125,8 +125,8 @@
                 android:layout_height="30dp"
                 android:background="@drawable/round_corner_white"
                 android:backgroundTint="@color/blue"
-                app:srcCompat="@drawable/baseline_account_circle_24"
-                tools:srcCompat="@drawable/baseline_location_on_24" />
+                app:srcCompat="@drawable/baseline_account_blue"
+                tools:srcCompat="@drawable/baseline_location_white" />
 
         </FrameLayout>
 
@@ -193,8 +193,8 @@
                 android:layout_height="30dp"
                 android:background="@drawable/round_corner_white"
                 android:padding="5dp"
-                app:srcCompat="@drawable/baseline_account_circle_24"
-                tools:srcCompat="@drawable/baseline_account_circle_24" />
+                app:srcCompat="@drawable/baseline_account_blue"
+                tools:srcCompat="@drawable/baseline_account_blue" />
 
         </FrameLayout>
 
@@ -219,8 +219,8 @@
                 android:layout_height="30dp"
                 android:background="@drawable/round_corner_white"
                 android:padding="5dp"
-                app:srcCompat="@drawable/baseline_lock_24"
-                tools:srcCompat="@drawable/baseline_lock_24" />
+                app:srcCompat="@drawable/baseline_lock_blue"
+                tools:srcCompat="@drawable/baseline_lock_blue" />
 
         </FrameLayout>
 

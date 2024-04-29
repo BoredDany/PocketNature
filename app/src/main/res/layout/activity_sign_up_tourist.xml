@@ -135,8 +135,8 @@
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
                 android:padding="5dp"
-                app:srcCompat="@drawable/baseline_calendar_month_24"
-                tools:srcCompat="@drawable/baseline_calendar_month_24" />
+                app:srcCompat="@drawable/baseline_calendar_blue"
+                tools:srcCompat="@drawable/baseline_calendar_blue" />
 
         </FrameLayout>
 
@@ -161,8 +161,8 @@
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
                 android:padding="5dp"
-                app:srcCompat="@drawable/baseline_account_circle_24"
-                tools:srcCompat="@drawable/baseline_account_circle_24" />
+                app:srcCompat="@drawable/baseline_account_blue"
+                tools:srcCompat="@drawable/baseline_account_blue" />
 
         </FrameLayout>
 
@@ -187,8 +187,8 @@
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
                 android:padding="5dp"
-                app:srcCompat="@drawable/baseline_lock_24"
-                tools:srcCompat="@drawable/baseline_lock_24" />
+                app:srcCompat="@drawable/baseline_lock_blue"
+                tools:srcCompat="@drawable/baseline_lock_blue" />
 
         </FrameLayout>
 

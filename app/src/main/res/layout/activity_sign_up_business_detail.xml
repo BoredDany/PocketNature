@@ -222,8 +222,8 @@
                     android:layout_marginEnd="10dp"
                     android:background="@drawable/round_corner_white"
                     android:backgroundTint="@color/blue"
-                    app:srcCompat="@drawable/baseline_account_circle_24"
-                    tools:srcCompat="@drawable/baseline_camera_alt_24"
+                    app:srcCompat="@drawable/baseline_account_blue"
+                    tools:srcCompat="@drawable/baseline_camera_white"
                     android:padding="20dp"/>
 
                 <ImageButton
@@ -233,8 +233,8 @@
                     android:layout_marginEnd="10dp"
                     android:background="@drawable/round_corner_white"
                     android:backgroundTint="@color/blue"
-                    app:srcCompat="@drawable/baseline_insert_photo_24"
-                    tools:srcCompat="@drawable/baseline_insert_photo_24"
+                    app:srcCompat="@drawable/baseline_gallery_white"
+                    tools:srcCompat="@drawable/baseline_gallery_white"
                     android:padding="20dp"/>
 
             </LinearLayout>
@@ -247,7 +247,7 @@
                 android:scaleType="centerCrop"
                 android:background="@color/white"
                 android:padding="100dp"
-                app:srcCompat="@drawable/baseline_photo_size_select_actual_24">
+                app:srcCompat="@drawable/baseline_photo_blue">
 
             </ImageView>
 

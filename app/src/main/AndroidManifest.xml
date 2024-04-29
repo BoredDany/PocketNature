@@ -13,16 +13,30 @@
         android:theme="@style/Theme.PocketNature"
         tools:targetApi="31">
         <activity
+            android:name=".places.DetailPlaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".nature.StatisticsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".nature.CamerasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".places.PlacesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".events.EventsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".nature.SpeciesActivity"
+            android:exported="false" />
+        <activity
             android:name=".nature.AvistamientosActivity"
             android:exported="false" />
         <activity
             android:name=".places.HomeActivity"
             android:exported="false"
-            android:label="@string/title_activity_home"
-            android:theme="@style/Theme.PocketNature.NoActionBar" />
-        <activity
-            android:name=".places.MenuActivity"
-            android:exported="false" />
+            android:label="@string/title_activity_home" />
         <activity
             android:name=".signups.SignUpBusinessDetailActivity"
             android:exported="false" />
@@ -34,16 +48,13 @@
             android:exported="false" />
         <activity
             android:name=".signups.SignUpTouristActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:exported="false" />
         <activity
             android:name=".signups.SignUpActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
