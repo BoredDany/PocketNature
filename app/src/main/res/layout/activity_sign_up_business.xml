@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,240 +7,176 @@
     android:background="@color/green"
     tools:context=".signups.SignUpBusinessActivity">
 
-    <LinearLayout
-        android:id="@+id/head"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/blue"
-        android:orientation="horizontal"
-        android:padding="15dp">
-
-
-        <RelativeLayout
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/round_corner_white">
-
-
-            <ImageView
-                android:id="@+id/logoImg"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_centerInParent="true"
-                app:srcCompat="@drawable/logo"
-                tools:srcCompat="@drawable/logo" />
-
-        </RelativeLayout>
-
+        android:layout_gravity="center_vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_above="@+id/footer"
+            android:layout_below="@+id/head"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
             android:orientation="vertical"
-            android:paddingStart="20dp">
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginBottom="5dp"
-                android:text="CREATE YOUR ACCOUNT"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/userTypeTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="NEGOCIO"
-                android:textColor="@color/white" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/footer"
-        android:layout_below="@+id/head"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp">
-
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginBottom="18dp"
-            android:background="@drawable/round_corner_white"
-            android:hint="business name"
-            android:paddingStart="20dp"
-            android:textColorHint="#4D000000" />
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginBottom="18dp"
-            android:background="@drawable/round_corner_white"
-            android:hint="email"
-            android:paddingStart="20dp"
-            android:textColorHint="#4D000000" />
-
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginBottom="18dp"
-            android:background="@drawable/round_corner_white"
-            android:hint="phone"
-            android:paddingStart="20dp"
-            android:textColorHint="#4D000000" />
-
-        <FrameLayout
-            android:id="@+id/locationLay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp">
+            android:padding="20dp">
 
             <EditText
-                android:id="@+id/location"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="18dp"
                 android:background="@drawable/round_corner_white"
-                android:hint="location"
-                android:paddingLeft="40dp"
+                android:hint="Business name"
+                android:paddingStart="20dp"
                 android:textColorHint="#4D000000" />
 
-            <ImageButton
-                android:id="@+id/locationBtn"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="18dp"
                 android:background="@drawable/round_corner_white"
-                android:backgroundTint="@color/blue"
-                app:srcCompat="@drawable/baseline_account_blue"
-                tools:srcCompat="@drawable/baseline_location_white" />
+                android:hint="Email"
+                android:paddingStart="20dp"
+                android:textColorHint="#4D000000" />
 
-        </FrameLayout>
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/round_corner_white"
+                android:hint="Phone"
+                android:paddingStart="20dp"
+                android:textColorHint="#4D000000" />
 
-        <FrameLayout
-            android:id="@+id/frameLayout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_above="@+id/sizeSpinner"
-            android:layout_below="@+id/upperBar"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:padding="10dp">
+            <FrameLayout
+                android:id="@+id/locationLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp">
+
+                <EditText
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/round_corner_white"
+                    android:hint="Location"
+                    android:paddingLeft="50dp"
+                    android:textColorHint="#4D000000" />
+
+                <ImageButton
+                    android:id="@+id/locationBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/round_corner_white"
+                    android:backgroundTint="@color/blue"
+                    app:srcCompat="@drawable/baseline_location_white"
+                    tools:srcCompat="@drawable/baseline_location_white" />
+
+            </FrameLayout>
 
             <org.osmdroid.views.MapView
                 android:id="@+id/osmMap"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="500dp"
+                android:layout_marginBottom="20dp">
 
             </org.osmdroid.views.MapView>
 
-        </FrameLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Category: "
-                android:textColor="@color/blue"></TextView>
-
-            <Spinner
-                android:id="@+id/type"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/round_corner_white"
-                android:entries="@array/business"
-                android:paddingStart="20dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category: "
+                    android:textColor="@color/blue">
+
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/type"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/round_corner_white"
+                    android:entries="@array/business"
+                    android:paddingStart="20dp" />
+
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:id="@+id/usernameLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp">
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/round_corner_white"
+                    android:hint="username"
+                    android:paddingLeft="50dp"
+                    android:textColorHint="#4D000000" />
+
+                <ImageView
+                    android:id="@+id/logoProfile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/round_corner_white"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/baseline_account_blue"
+                    tools:srcCompat="@drawable/baseline_account_blue" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/passwordLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/round_corner_white"
+                    android:hint="password"
+                    android:paddingLeft="50dp"
+                    android:textColorHint="#4D000000" />
+
+                <ImageView
+                    android:id="@+id/logoPassword"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/round_corner_white"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/baseline_lock_blue"
+                    tools:srcCompat="@drawable/baseline_lock_blue" />
+
+            </FrameLayout>
+
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner_blue"
+                android:text="next"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
-
-        <FrameLayout
-            android:id="@+id/usernameLay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp">
-
-            <EditText
-                android:id="@+id/username"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/round_corner_white"
-                android:hint="username"
-                android:paddingLeft="43dp"
-                android:textColorHint="#4D000000" />
-
-            <ImageView
-                android:id="@+id/logoProfile"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/round_corner_white"
-                android:padding="5dp"
-                app:srcCompat="@drawable/baseline_account_blue"
-                tools:srcCompat="@drawable/baseline_account_blue" />
-
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/passwordLay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp">
-
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/round_corner_white"
-                android:hint="password"
-                android:paddingLeft="43dp"
-                android:textColorHint="#4D000000" />
-
-            <ImageView
-                android:id="@+id/logoPassword"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/round_corner_white"
-                android:padding="5dp"
-                app:srcCompat="@drawable/baseline_lock_blue"
-                tools:srcCompat="@drawable/baseline_lock_blue" />
-
-        </FrameLayout>
+    </ScrollView>
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/login"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:background="@drawable/round_corner_blue"
-            android:text="next"
-            android:textColor="@color/white" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/footer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true">
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

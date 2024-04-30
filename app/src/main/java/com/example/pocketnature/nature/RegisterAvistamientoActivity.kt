@@ -1,19 +1,18 @@
-package com.example.pocketnature.places
+package com.example.pocketnature.nature
 
 import android.os.Bundle
 import android.view.MenuItem
-import com.example.pocketnature.databinding.ActivityDetailPlaceBinding
+import com.example.pocketnature.databinding.ActivityRegisterAvistamientoBinding
 import com.example.pocketnature.utils.DrawerMenuController
 
-class DetailPlaceActivity : DrawerMenuController() {
-    lateinit var binding: ActivityDetailPlaceBinding
+class RegisterAvistamientoActivity : DrawerMenuController() {
+    lateinit var binding: ActivityRegisterAvistamientoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDetailPlaceBinding.inflate(layoutInflater)
+        binding = ActivityRegisterAvistamientoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setupDrawer(binding.drawerLayout, binding.navView)
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

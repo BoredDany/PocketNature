@@ -8,7 +8,7 @@ import android.widget.AdapterView
 import com.example.pocketnature.databinding.ActivityHomeBinding
 import com.example.pocketnature.model.Place
 import com.example.pocketnature.model.Price
-import com.example.pocketnature.navigation.DrawerMenuController
+import com.example.pocketnature.utils.DrawerMenuController
 
 class HomeActivity : DrawerMenuController() {
     lateinit var binding: ActivityHomeBinding
@@ -19,7 +19,16 @@ class HomeActivity : DrawerMenuController() {
 
         setupDrawer(binding.drawerLayout, binding.navView)
 
-        // Crear una lista de 10 objetos Place
+        //INITIALIZE CONTENT
+        initializePlaces()
+
+        //SET WEATHER
+        setWeather()
+
+    }
+
+    //INITIALIZE CONTENT
+    private fun initializePlaces(){
         val places = List(10) {
             Place(
                 name = "name",
@@ -48,8 +57,10 @@ class HomeActivity : DrawerMenuController() {
                 startActivity(intent)
             }
         })
+    }
 
-
+    //SET WEATHER
+    private fun setWeather(){
 
     }
 

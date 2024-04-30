@@ -1,14 +1,9 @@
-package com.example.pocketnature.navigation
+package com.example.pocketnature.utils
 
-import android.app.Activity
-import android.content.Context
 import android.content.Intent
-import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.pocketnature.R
 import com.example.pocketnature.events.EventsActivity

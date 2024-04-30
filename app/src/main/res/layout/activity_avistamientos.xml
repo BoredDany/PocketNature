@@ -11,19 +11,99 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/green"
+        android:padding="25dp">
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Filter by:"
+                android:layout_gravity="center_vertical"
+                android:textSize="15sp"
+                android:textColor="@color/blue"
+                android:layout_marginEnd="5dp"/>
+
+            <Spinner
+                android:id="@+id/filter"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner_white"
+                android:paddingLeft="20dp"
+                android:entries="@array/sightings"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner_white"
+                android:hint="Search"
+                android:paddingLeft="20dp"
+                android:textColorHint="#4D000000" />
+
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner_blue"
+                android:padding="5dp"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/baseline_search_white"
+                tools:srcCompat="@drawable/baseline_search_white" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <org.osmdroid.views.MapView
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+            </org.osmdroid.views.MapView>
+
+            <EditText
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corner_white_transparent"
+                android:hint="Search location"
+                android:paddingLeft="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#4D000000"
+                android:inputType="text"
+                android:imeOptions="actionSend"/>
+
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btnRegisterSighting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="32dp"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="HOLA AVISTAMIENTO"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:text="register sightning"
+            android:layout_gravity="center_horizontal">
+        </Button>
+
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
