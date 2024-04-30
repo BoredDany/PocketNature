@@ -9,61 +9,16 @@
     android:background="@color/green"
     tools:context=".nature.RegisterAvistamientoActivity">
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="20dp">
 
         <LinearLayout
+            android:id="@+id/mapLay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="25dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp">
-
-                <EditText
-                    android:id="@+id/hour"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/round_corner_white"
-                    android:hint="hour"
-                    android:paddingLeft="20dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_weight="0.5"
-                    android:textColorHint="#4D000000" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:layout_marginStart="5dp">
-
-                    <EditText
-                        android:id="@+id/date"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:background="@drawable/round_corner_white"
-                        android:hint="date"
-                        android:paddingLeft="20dp"
-                        android:textColorHint="#4D000000" />
-
-                    <ImageView
-                        android:id="@+id/calendarLogo"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/round_corner_white"
-                        android:padding="5dp"
-                        android:layout_alignParentEnd="true"
-                        app:srcCompat="@drawable/baseline_calendar_blue"
-                        tools:srcCompat="@drawable/baseline_calendar_blue" />
-
-                </RelativeLayout>
-
-            </LinearLayout>
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/birthdayLay"
@@ -78,16 +33,19 @@
                     android:background="@drawable/round_corner_white"
                     android:hint="location"
                     android:paddingLeft="20dp"
+                    android:inputType="text"
+                    android:imeOptions="actionSend"
                     android:textColorHint="#4D000000" />
 
-                <ImageView
+                <ImageButton
+                    android:id="@+id/btnMyLocation"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/round_corner_white"
+                    android:background="@drawable/round_corner_blue"
                     android:padding="5dp"
                     android:layout_alignParentEnd="true"
-                    app:srcCompat="@drawable/baseline_location_blue"
-                    tools:srcCompat="@drawable/baseline_location_blue" />
+                    app:srcCompat="@drawable/baseline_location_white"
+                    tools:srcCompat="@drawable/baseline_location_white" />
 
             </RelativeLayout>
 
@@ -98,66 +56,150 @@
                 android:layout_marginBottom="10dp">
             </org.osmdroid.views.MapView>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Weather at the moment"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/blue"
-                android:textSize="15sp">
-            </TextView>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/mapLay">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginBottom="25dp">
+                android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/btnSunny"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:scaleType="centerCrop"
-                    android:padding="5dp"
-                    android:background="@drawable/round_corner_white"
-                    android:src="@drawable/sun_icon">
-                </ImageButton>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
 
-                <ImageButton
-                    android:id="@+id/btnRainy"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:scaleType="centerCrop"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:padding="15dp"
-                    android:background="@drawable/round_corner_white"
-                    android:src="@drawable/rain_icon">
-                </ImageButton>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_marginStart="5dp">
 
-                <ImageButton
-                    android:id="@+id/btnCloudy"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/round_corner_white"
-                    android:src="@drawable/nublado_icon">
-                </ImageButton>
+                        <EditText
+                            android:id="@+id/hour"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/round_corner_white"
+                            android:hint="hour"
+                            android:paddingLeft="20dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="0.5"
+                            android:textColorHint="#4D000000" />
+
+
+                        <ImageButton
+                            android:id="@+id/btnClock"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/round_corner_blue"
+                            android:padding="5dp"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/baseline_clock_white"
+                            tools:srcCompat="@drawable/baseline_clock_white" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:layout_marginStart="5dp">
+
+                        <EditText
+                            android:id="@+id/date"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/round_corner_white"
+                            android:hint="date"
+                            android:onClick="selectDate"
+                            android:paddingLeft="20dp"
+                            android:textColorHint="#4D000000"/>
+
+                        <ImageButton
+                            android:id="@+id/btnCalendar"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/round_corner_blue"
+                            android:padding="5dp"
+                            android:layout_alignParentEnd="true"
+                            app:srcCompat="@drawable/baseline_calendar_white"
+                            tools:srcCompat="@drawable/baseline_calendar_white" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Weather at the moment"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/blue"
+                    android:textSize="15sp">
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="25dp">
+
+                    <ImageButton
+                        android:id="@+id/btnSunny"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:padding="5dp"
+                        android:background="@drawable/round_corner_white"
+                        android:src="@drawable/sun_icon">
+                    </ImageButton>
+
+                    <ImageButton
+                        android:id="@+id/btnRainy"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:padding="15dp"
+                        android:background="@drawable/round_corner_white"
+                        android:src="@drawable/rain_icon">
+                    </ImageButton>
+
+                    <ImageButton
+                        android:id="@+id/btnCloudy"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/round_corner_white"
+                        android:src="@drawable/nublado_icon">
+                    </ImageButton>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="next"
+                    android:layout_gravity="center_horizontal">
+                </Button>
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/btnNext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="next"
-                android:layout_gravity="center_horizontal">
-            </Button>
+        </ScrollView>
 
-        </LinearLayout>
 
-    </ScrollView>
+    </RelativeLayout>
+
+
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"

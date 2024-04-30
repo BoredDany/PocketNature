@@ -26,7 +26,7 @@ import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.MapEventsOverlay
 import org.osmdroid.views.overlay.Marker
 import com.example.pocketnature.R
-import com.example.pocketnature.utils.MarkerType
+import com.example.pocketnature.utils.Map
 import org.osmdroid.config.Configuration
 import java.io.IOException
 
@@ -43,8 +43,7 @@ class AvistamientosActivity : DrawerMenuController() {
     private lateinit var mLocationCallback: LocationCallback
     private var currentLocationmarker: Marker? = null
     private var searchMarker: Marker? = null
-
-    //GEOCODER
+    private var sightningMarker: Marker? = null
     var mGeocoder: Geocoder? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -122,7 +121,6 @@ class AvistamientosActivity : DrawerMenuController() {
         LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY,10000).apply {
             setMinUpdateIntervalMillis(5000)
         }.build()
-
     private fun startLocationUpdates() {
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
@@ -150,10 +148,9 @@ class AvistamientosActivity : DrawerMenuController() {
                                 Log.i("Geocoder", "Latitud: ${addressResult.latitude}, Longitud: ${addressResult.longitude}")
 
                                 //Agregar Marcador al mapa
-                                createMarker(position, addressString, null, R.drawable.baseline_location_red, MarkerType.SEARCH)
+                                createMarker(position, addressString, null, R.drawable.baseline_location_red, Map.SEARCH)
                                 searchMarker?.let { map!!.overlays.add(it) }
                                 map!!.controller.setCenter(searchMarker!!.position)
-
 
                             } else {
                                 Log.i("Geocoder", "Dirección no encontrada:" + addressString)
@@ -184,7 +181,7 @@ class AvistamientosActivity : DrawerMenuController() {
                 Log.i("LOCATION", "Location update in the callback: $location")
                 if (location != null) {
                     val point = GeoPoint(location.latitude, location.longitude)
-                    createMarker(point, "you", null, R.drawable.baseline_location_blue, MarkerType.CURRENT)
+                    createMarker(point, "you", null, R.drawable.baseline_location_blue, Map.CURRENT)
                     currentLocationmarker?.let { map!!.overlays.add(it) }
                 }
             }
@@ -200,7 +197,7 @@ class AvistamientosActivity : DrawerMenuController() {
             }
 
             when(markerType){
-                MarkerType.CURRENT -> {
+                Map.CURRENT -> {
                     currentLocationmarker = currentLocationmarker ?: Marker(map)
                     title?.let { currentLocationmarker!!.title = it }
                     desc?.let { currentLocationmarker!!.subDescription = it }
@@ -209,7 +206,7 @@ class AvistamientosActivity : DrawerMenuController() {
                     currentLocationmarker!!.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
                 }
 
-                MarkerType.SEARCH -> {
+                Map.SEARCH -> {
                     searchMarker = searchMarker ?: Marker(map)
                     title?.let { searchMarker!!.title = it }
                     desc?.let { searchMarker!!.subDescription = it }

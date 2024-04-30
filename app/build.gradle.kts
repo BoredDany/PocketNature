@@ -58,8 +58,12 @@ dependencies {
 
     implementation("com.google.android.gms:play-services-location:21.2.0")
     implementation ("org.osmdroid:osmdroid-android:6.1.14")
+    implementation ("com.squareup.okhttp3:okhttp:3.2.0")
+
 
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+
+    implementation ("com.google.code.gson:gson:2.8.8")
 
 }
