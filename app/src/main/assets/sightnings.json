@@ -1,0 +1,122 @@
+{
+  "-NwmXEPV7mrKfeyMQPXS": {
+    "cantidadIndividuos": 1,
+    "clasificacionEspecia": "Birds",
+    "clima": "rainy",
+    "fecha": "30/04/2024",
+    "hora": "06:30",
+    "latitud": 4.637253396896,
+    "longitud": -74.14226531982422,
+    "nombreComun": "colibri cola de espada ",
+    "photo": "https://firebasestorage.googleapis.com/v0/b/pocketnature-df807.appspot.com/o/sightnings%2Fimage_1714539785766.jpg?alt=media&token=4b4e6836-1430-4c3e-aefd-5c7a9ddb8476",
+    "scientificName": "loddigesia"
+  },
+  "-NwmXRatzpkfQRuVqhK9": {
+    "cantidadIndividuos": 1,
+    "clasificacionEspecia": "Birds",
+    "clima": "cloudy",
+    "fecha": "01/05/2024",
+    "hora": "09:00",
+    "latitud": 4.637852244707915,
+    "longitud": -74.13132190704346,
+    "nombreComun": "aguila real",
+    "photo": "https://firebasestorage.googleapis.com/v0/b/pocketnature-df807.appspot.com/o/sightnings%2Fimage_1714539840143.jpg?alt=media&token=adfe5eba-bf8a-4992-9968-bcd8c39a2b82",
+    "scientificName": "aquila chrysaetos"
+  },
+  "-NwmXbeLnJA1ejq7yd7G": {
+    "cantidadIndividuos": 1,
+    "clasificacionEspecia": "Insects",
+    "clima": "sunny",
+    "fecha": "01/05/2024",
+    "hora": "03:30",
+    "latitud": 4.651326186115014,
+    "longitud": -74.13265228271484,
+    "nombreComun": "escarabajo Hércules ",
+    "photo": "https://firebasestorage.googleapis.com/v0/b/pocketnature-df807.appspot.com/o/sightnings%2Fimage_1714539885099.jpg?alt=media&token=0d6a43c6-60c6-4efc-80e5-c61f4dab6b8a",
+    "scientificName": "dynastes Hércules "
+  },
+  "-NwmXncBO1s2lVzauiwD": {
+    "cantidadIndividuos": 2,
+    "clasificacionEspecia": "Insects",
+    "clima": "sunny",
+    "fecha": "01/05/2024",
+    "hora": "12:00",
+    "latitud": 4.646364383671212,
+    "longitud": -74.14831638336182,
+    "nombreComun": "mariposa monarca ",
+    "photo": "https://firebasestorage.googleapis.com/v0/b/pocketnature-df807.appspot.com/o/sightnings%2Fimage_1714539933329.jpg?alt=media&token=465e96b6-d570-4207-8014-dc2e369e4991",
+    "scientificName": "danaus plexippus"
+  },
+  "-NwmXxkcR0nYUuvoyyej": {
+    "cantidadIndividuos": 1,
+    "clasificacionEspecia": "Amphibians",
+    "clima": "rainy",
+    "fecha": "01/05/2024",
+    "hora": "06:30",
+    "latitud": 4.6568867852402605,
+    "longitud": -74.1429090499878,
+    "nombreComun": "salamandra gigante ",
+    "photo": "https://firebasestorage.googleapis.com/v0/b/pocketnature-df807.appspot.com/o/sightnings%2Fimage_1714539975515.jpg?alt=media&token=a5ff56bf-d785-4463-8203-8e22057db5b6",
+    "scientificName": "andrias davidianus"
+  },
+  "-NwmY5rfICsiUHt2k9UD": {
+    "cantidadIndividuos": 1,
+    "clasificacionEspecia": "Amphibians",
+    "clima": "cloudy",
+    "fecha": "30/04/2024",
+    "hora": "02:25",
+    "latitud": 4.647262643600058,
+    "longitud": -74.14247989654541,
+    "nombreComun": "rana verde ",
+    "photo": "https://firebasestorage.googleapis.com/v0/b/pocketnature-df807.appspot.com/o/sightnings%2Fimage_1714540012818.jpg?alt=media&token=cd953bc4-1b52-4ea7-864a-9d8b2b39f40b",
+    "scientificName": "pelophylax "
+  },
+  "-NwmYGnZywen5WsHQQ-P": {
+    "cantidadIndividuos": 1,
+    "clasificacionEspecia": "Reptiles",
+    "clima": "rainy",
+    "fecha": "01/05/2024",
+    "hora": "06:40",
+    "latitud": 4.646321609360328,
+    "longitud": -74.15140628814697,
+    "nombreComun": "serpiente pitón ",
+    "photo": "https://firebasestorage.googleapis.com/v0/b/pocketnature-df807.appspot.com/o/sightnings%2Fimage_1714540057555.jpg?alt=media&token=67804928-b98c-4d58-8807-b3475e0e66dd",
+    "scientificName": "pythonidae"
+  },
+  "-NwmYQOyQvUK_yMq8LTd": {
+    "cantidadIndividuos": 1,
+    "clasificacionEspecia": "Reptiles",
+    "clima": "sunny",
+    "fecha": "01/05/2024",
+    "hora": "11:00",
+    "latitud": 4.658854371327152,
+    "longitud": -74.13218021392822,
+    "nombreComun": "cocodrilo del Nilo ",
+    "photo": "https://firebasestorage.googleapis.com/v0/b/pocketnature-df807.appspot.com/o/sightnings%2Fimage_1714540095833.jpg?alt=media&token=946bfdc8-1db5-442d-b586-2009b3f90dcb",
+    "scientificName": "crocodylus niloticus"
+  },
+  "-NwmYbuSFM7tXQ6kRoQE": {
+    "cantidadIndividuos": 1,
+    "clasificacionEspecia": "Mammals",
+    "clima": "cloudy",
+    "fecha": "01/05/2024",
+    "hora": "09:45",
+    "latitud": 4.661164139272557,
+    "longitud": -74.1505479812622,
+    "nombreComun": "ballena azul ",
+    "photo": "https://firebasestorage.googleapis.com/v0/b/pocketnature-df807.appspot.com/o/sightnings%2Fimage_1714540148567.jpg?alt=media&token=6bedc17e-a16d-4802-9c0c-43d1cf3b7d9d",
+    "scientificName": "balaenoptera musculus"
+  },
+  "-NwmYlQC8ZDUmHLU8nsR": {
+    "cantidadIndividuos": 1,
+    "clasificacionEspecia": "Mammals",
+    "clima": "rainy",
+    "fecha": "01/05/2024",
+    "hora": "05:59",
+    "latitud": 4.647219869343687,
+    "longitud": -74.136643409729,
+    "nombreComun": "león ",
+    "photo": "https://firebasestorage.googleapis.com/v0/b/pocketnature-df807.appspot.com/o/sightnings%2Fimage_1714540187248.jpg?alt=media&token=776bc4fc-9e76-49bf-9932-ea597532ba3b",
+    "scientificName": "panthera leo"
+  }
+}

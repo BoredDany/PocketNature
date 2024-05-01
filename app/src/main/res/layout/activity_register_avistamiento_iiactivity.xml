@@ -55,9 +55,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mammals"
+                        android:layout_below="@id/btnMammals"
                         android:layout_centerInParent="true"
-                        android:layout_below="@id/btnMammals">
+                        android:text="Mammals"
+                        android:textColor="@color/blue">
                     </TextView>
 
                 </RelativeLayout>
@@ -83,6 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Birds"
+                        android:textColor="@color/blue"
                         android:layout_centerInParent="true"
                         android:layout_below="@id/btnBirds">
                     </TextView>
@@ -107,6 +109,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Reptiles"
+                        android:textColor="@color/blue"
                         android:layout_centerInParent="true"
                         android:layout_below="@id/btnReptiles">
                     </TextView>
@@ -141,6 +144,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Amphibians"
+                        android:textColor="@color/blue"
                         android:layout_centerInParent="true"
                         android:layout_below="@id/btnAmphibians">
                     </TextView>
@@ -166,6 +170,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Insects"
+                        android:textColor="@color/blue"
                         android:layout_centerInParent="true"
                         android:layout_below="@id/btnInsects">
                     </TextView>
@@ -202,6 +207,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/round_corner_white"
                 android:hint="Number of individuals"
+                android:inputType="number"
                 android:paddingStart="20dp"
                 android:textColorHint="#4D000000" />
 

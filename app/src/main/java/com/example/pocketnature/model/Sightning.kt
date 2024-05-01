@@ -1,17 +1,16 @@
 package com.example.pocketnature.model
 
 class Sightning {
-
-    var fecha: String
-    var hora: String
-    var latitud: Double
-    var longitud: Double
-    var clima: String
-    var clasificacionEspecia: String
-    var nombreComun: String
-    var scientificName: String
-    var cantidadIndividuos: Int
-    var photo: String
+    var fecha: String = ""
+    var hora: String = ""
+    var latitud: Double = 0.0
+    var longitud: Double = 0.0
+    var clima: String = ""
+    var clasificacionEspecia: String = ""
+    var nombreComun: String = ""
+    var scientificName: String = ""
+    var cantidadIndividuos: Int = 0
+    var photo: String = ""
 
     constructor(
         fecha: String,

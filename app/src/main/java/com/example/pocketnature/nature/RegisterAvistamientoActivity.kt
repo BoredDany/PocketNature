@@ -1,6 +1,7 @@
 package com.example.pocketnature.nature
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
@@ -8,7 +9,10 @@ import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.view.inputmethod.EditorInfo
+import android.widget.DatePicker
+import android.widget.TimePicker
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.pocketnature.R
@@ -30,7 +34,9 @@ import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.MapEventsOverlay
 import org.osmdroid.views.overlay.Marker
 import java.io.IOException
+import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Locale
 
 class RegisterAvistamientoActivity : DrawerMenuController() {
     //VIEW
@@ -46,10 +52,7 @@ class RegisterAvistamientoActivity : DrawerMenuController() {
     private var mGeocoder: Geocoder? = null
 
     //SIGHTNING INFO
-    val calendar = Calendar.getInstance()
-    val year = calendar.get(Calendar.YEAR)
-    val month = calendar.get(Calendar.MONTH)
-    val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+    private val calendar = Calendar.getInstance()
     private var weather: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -169,41 +172,17 @@ class RegisterAvistamientoActivity : DrawerMenuController() {
     //SET LISTENNERS
     private fun setListenners(){
         binding.btnNext.setOnClickListener {
-            if(weather.equals("")){
-
-            }else if(searchMarker == null){
-
-            }else if (binding.date.text.toString().isEmpty()){
-
-            }else if(binding.hour.text.toString().isEmpty()){
-
+            if(binding.date.text.toString().isEmpty() || binding.hour.text.toString().isEmpty() || searchMarker == null || weather.isEmpty()){
+                Toast.makeText(this, "DATA IS MISSING", Toast.LENGTH_SHORT).show()
             }else{
                 val intent = Intent(this, RegisterAvistamientoIIActivity::class.java)
-                intent.putExtra("date", dayOfMonth.toString() + "/" + month.toString() + "/" + year.toString())
-                intent.putExtra("hour", "hour")
-                intent.putExtra("latitude", searchMarker!!.position.latitude.toString())
-                intent.putExtra("longitude", searchMarker!!.position.longitude.toString())
+                intent.putExtra("date", binding.date.text.toString())
+                intent.putExtra("hour", binding.hour.text.toString())
+                intent.putExtra("latitude", searchMarker!!.position.latitude)
+                intent.putExtra("longitude", searchMarker!!.position.longitude)
                 intent.putExtra("weather", weather)
                 startActivity(intent)
             }
-        }
-
-        // Mostrar el DatePickerDialog cuando se haga clic en el campo de texto
-        binding.date.setOnClickListener {
-            val datePickerDialog = DatePickerDialog(
-                this,
-                DatePickerDialog.OnDateSetListener { view, yearSelected, monthOfYear, dayOfMonthSelected ->
-                    // Actualizar el texto del campo de texto con la fecha seleccionada
-                    val selectedDate = "$dayOfMonthSelected/${monthOfYear + 1}/$yearSelected"
-                    binding.date.setText(selectedDate)
-                },
-                year,
-                month,
-                dayOfMonth
-            )
-
-            // Mostrar el DatePickerDialog
-            datePickerDialog.show()
         }
 
         binding.btnMyLocation.setOnClickListener {
@@ -219,24 +198,31 @@ class RegisterAvistamientoActivity : DrawerMenuController() {
             Toast.makeText(this, "Use my current location", Toast.LENGTH_SHORT).show()
         }
 
+        binding.btnCalendar.setOnClickListener {
+            showCalendar()
+        }
+
+        binding.btnClock.setOnClickListener {
+            showTimePicker()
+        }
         binding.btnCloudy.setOnClickListener {
-            it.isSelected = true
-            binding.btnSunny.isSelected = false
-            binding.btnRainy.isSelected = false
+            it.setBackgroundResource(R.drawable.round_corner_border_blue)
+            binding.btnSunny.setBackgroundResource(R.drawable.round_corner_white)
+            binding.btnRainy.setBackgroundResource(R.drawable.round_corner_white)
             weather = Weather.CLOUDY
         }
 
         binding.btnSunny.setOnClickListener {
-            it.isSelected = true
-            binding.btnCloudy.isSelected = false
-            binding.btnRainy.isSelected = false
+            it.setBackgroundResource(R.drawable.round_corner_border_blue)
+            binding.btnCloudy.setBackgroundResource(R.drawable.round_corner_white)
+            binding.btnRainy.setBackgroundResource(R.drawable.round_corner_white)
             weather = Weather.SUNNY
         }
 
         binding.btnRainy.setOnClickListener {
-            it.isSelected = true
-            binding.btnSunny.isSelected = false
-            binding.btnCloudy.isSelected = false
+            it.setBackgroundResource(R.drawable.round_corner_border_blue)
+            binding.btnSunny.setBackgroundResource(R.drawable.round_corner_white)
+            binding.btnCloudy.setBackgroundResource(R.drawable.round_corner_white)
             weather = Weather.RAINY
         }
 
@@ -251,6 +237,46 @@ class RegisterAvistamientoActivity : DrawerMenuController() {
                 }
             }
         }
+    }
+
+    private fun showCalendar(){
+        val datePickerDialog = DatePickerDialog(this, {DatePicker, year: Int, monthOfYear: Int, dayOfMonth: Int ->
+            val selectedDate = Calendar.getInstance()
+            selectedDate.set(year, monthOfYear, dayOfMonth)
+            val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+            val formattedDate = dateFormat.format(selectedDate.time)
+            binding.date.text = formattedDate
+        },
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        )
+
+        datePickerDialog.show()
+    }
+
+    private fun showTimePicker(){
+        val timePickerDialog = TimePickerDialog(
+            this,
+            TimePickerDialog.OnTimeSetListener { view: TimePicker?, hourOfDay: Int, minute: Int ->
+                // Obtener la hora seleccionada
+                calendar.set(Calendar.HOUR_OF_DAY, hourOfDay)
+                calendar.set(Calendar.MINUTE, minute)
+
+                // Formatear la hora seleccionada
+                val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
+                val formattedTime = timeFormat.format(calendar.time)
+
+                // Actualizar el texto del campo de texto con la hora seleccionada
+                binding.hour.text = formattedTime
+            },
+            calendar.get(Calendar.HOUR_OF_DAY),
+            calendar.get(Calendar.MINUTE),
+            true // Indica si se muestra el modo de 24 horas o no
+        )
+
+        // Mostrar el TimePickerDialog
+        timePickerDialog.show()
     }
 
     //MAP
@@ -312,4 +338,5 @@ class RegisterAvistamientoActivity : DrawerMenuController() {
         }
         return false
     }
+
 }

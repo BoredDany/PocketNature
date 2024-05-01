@@ -1,15 +1,22 @@
 package com.example.pocketnature.nature
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.location.Geocoder
 import android.os.Bundle
 import android.os.StrictMode
 import android.util.Log
+import android.util.TypedValue
 import android.view.MenuItem
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
+import androidx.compose.ui.graphics.Paint
 import androidx.core.app.ActivityCompat
 import com.example.pocketnature.databinding.ActivityAvistamientosBinding
 import com.example.pocketnature.utils.DrawerMenuController
@@ -26,9 +33,24 @@ import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.MapEventsOverlay
 import org.osmdroid.views.overlay.Marker
 import com.example.pocketnature.R
+import com.example.pocketnature.model.Sightning
+import com.example.pocketnature.model.Specie
+import com.example.pocketnature.utils.DataBase
 import com.example.pocketnature.utils.Map
+import com.example.pocketnature.utils.SpecieCategory
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import org.json.JSONArray
+import org.json.JSONObject
 import org.osmdroid.config.Configuration
+import java.io.BufferedReader
+import java.io.File
 import java.io.IOException
+import java.io.InputStreamReader
+import java.nio.charset.StandardCharsets
 
 
 class AvistamientosActivity : DrawerMenuController() {
@@ -45,6 +67,7 @@ class AvistamientosActivity : DrawerMenuController() {
     private var searchMarker: Marker? = null
     private var sightningMarker: Marker? = null
     var mGeocoder: Geocoder? = null
+    val jsonFile = "sightnings.json"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -94,13 +117,72 @@ class AvistamientosActivity : DrawerMenuController() {
         }
 
         //recorrer lista de avistamientos y createMarkerRetMark y poner listenner
+        val sightnings = getSightings ()
+        for(s in sightnings){
+            var iconID = R.drawable.baseline_location_blue
+            val point = GeoPoint(s.latitud, s.longitud)
+            val title = s.nombreComun + ":" + s.clasificacionEspecia + "\n" + s.cantidadIndividuos + " individuals\n" + s.fecha + " - " + s.hora
+            when(s.clasificacionEspecia){
+                SpecieCategory.REPTILES ->{ iconID = R.drawable.crocodile_icon }
+                SpecieCategory.MAMMALS ->{ iconID = R.drawable.monkey_icon }
+                SpecieCategory.BIRDS ->{ iconID = R.drawable.bird_icon }
+                SpecieCategory.AMPHIBIANS ->{ iconID = R.drawable.frog_icon }
+                SpecieCategory.INSECTS ->{ iconID = R.drawable.bug_icon }
+            }
+            sightningMarker = createMarkerRetMark(point, title, null, iconID)
+            sightningMarker?.let { map!!.overlays.add(it) }
+        }
 
     }
+
+    private fun getSightings(): MutableList<Sightning>{
+        val jsonObject = readJsonFromAssets(this, jsonFile)
+
+        if (jsonObject != null) {
+            val sightingsList = mutableListOf<Sightning>()
+
+            jsonObject.keys().forEach { key ->
+                val sightingObject = jsonObject.getJSONObject(key)
+                val sighting = Sightning(
+                    sightingObject.getString("fecha"),
+                    sightingObject.getString("hora"),
+                    sightingObject.getDouble("latitud"),
+                    sightingObject.getDouble("longitud"),
+                    sightingObject.getString("clima"),
+                    sightingObject.getString("clasificacionEspecia"),
+                    sightingObject.getString("nombreComun"),
+                    sightingObject.getString("scientificName"),
+                    sightingObject.getInt("cantidadIndividuos"),
+                    sightingObject.getString("photo")
+                )
+                sightingsList.add(sighting)
+            }
+            // Aquí puedes hacer lo que quieras con la lista de avistamientos
+            return sightingsList
+        } else {
+            println("Error al leer el archivo JSON desde assets.")
+        }
+        return mutableListOf()
+    }
+
     override fun onPause() {
         super.onPause()
         stopLocationUpdates()
         map!!.onPause()
     }
+
+    fun readJsonFromAssets(context: Context, fileName: String): JSONObject? {
+        val json: String?
+        try {
+            val inputStream = context.assets.open(fileName)
+            json = inputStream.bufferedReader().use { it.readText() }
+        } catch (ioException: IOException) {
+            ioException.printStackTrace()
+            return null
+        }
+        return JSONObject(json)
+    }
+
     private fun stopLocationUpdates() {
         mFusedLocationProviderClient.removeLocationUpdates(mLocationCallback)
     }
@@ -226,7 +308,41 @@ class AvistamientosActivity : DrawerMenuController() {
             desc?.let { marker.subDescription = it }
             if (iconID != 0) {
                 val myIcon = resources.getDrawable(iconID, this.theme)
-                marker.icon = myIcon
+                val newWidthDp = 24  // Define your desired width here in dp
+                val newHeightDp = 24  // Define your desired height here in dp
+
+                val newWidthPx = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    newWidthDp.toFloat(),
+                    resources.displayMetrics
+                ).toInt()
+
+                val newHeightPx = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    newHeightDp.toFloat(),
+                    resources.displayMetrics
+                ).toInt()
+
+                val bitmap = Bitmap.createBitmap(myIcon.intrinsicWidth, myIcon.intrinsicHeight, Bitmap.Config.ARGB_8888)
+                val canvas = Canvas(bitmap)
+                myIcon.setBounds(0, 0, canvas.width, canvas.height)
+                myIcon.draw(canvas)
+                val scaledBitmap = Bitmap.createScaledBitmap(bitmap, newWidthPx, newHeightPx, false)
+
+                // Create a new bitmap for the background with the same size as the scaled bitmap
+                val backgroundBitmap = Bitmap.createBitmap(newWidthPx, newHeightPx, Bitmap.Config.ARGB_8888)
+                val backgroundCanvas = Canvas(backgroundBitmap)
+
+                // Draw a white circle on the background bitmap
+                val paint = Paint()
+                paint.color = Color.WHITE
+                backgroundCanvas.drawCircle(newWidthPx / 2f, newHeightPx / 2f, newWidthPx / 2f, paint)
+
+                // Draw the scaled bitmap on top of the background bitmap
+                backgroundCanvas.drawBitmap(scaledBitmap, 0f, 0f, null)
+
+                val bitmapDrawable = BitmapDrawable(resources, backgroundBitmap)
+                marker.icon = bitmapDrawable
             }
             marker.position = p
             marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)

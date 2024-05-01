@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "656185822191",
+    "project_id": "pocketnature-df807",
+    "storage_bucket": "pocketnature-df807.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656185822191:android:99731ab533d35c4254841a",
+        "android_client_info": {
+          "package_name": "com.example.pocketnature"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5bj4edJOSM5ODJc1E-iUibMXCyXk3FfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
