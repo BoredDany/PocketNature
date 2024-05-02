@@ -6,6 +6,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.pocketnature.R
+import com.example.pocketnature.account.AccountActivity
 import com.example.pocketnature.events.EventsActivity
 import com.example.pocketnature.nature.AvistamientosActivity
 import com.example.pocketnature.nature.CamerasActivity
@@ -47,6 +48,8 @@ open class DrawerMenuController: AppCompatActivity() {
                 R.id.Statistics -> startActivity(Intent(this, StatisticsActivity::class.java))
 
                 R.id.Logout -> Toast.makeText(applicationContext, "cerrar sesion", Toast.LENGTH_SHORT).show()
+
+                R.id.Account -> startActivity(Intent(this, AccountActivity::class.java))
 
             }
             true

@@ -29,7 +29,7 @@
                 android:id="@+id/namePlace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PLACE"
+                android:text="Central Park"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -59,7 +59,7 @@
                     android:id="@+id/companyName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="EMPRESA"
+                    android:text="New York City Department of Parks and Recreation"
                     android:textColor="@color/blue"
                     android:textSize="15sp"
                     android:layout_toEndOf="@+id/profilePhoto"
@@ -123,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
                     android:textColor="@color/blue"
-                    android:text="location" />
+                    android:text="New York" />
 
             </LinearLayout>
 
@@ -154,7 +154,7 @@
                                 android:textSize="15sp"
                                 android:layout_marginBottom="10dp"
                                 android:textColor="@color/blue"
-                                android:text="Descripcion del lugar"/>
+                                android:text="Central Park is an urban park in New York City located between the Upper West and Upper East Sides of Manhattan. It is the most visited urban park in the United States and one of the most filmed locations in the world."/>
 
                             <TextView
                                 android:id="@+id/categories"
@@ -164,7 +164,7 @@
                                 android:layout_marginBottom="30dp"
                                 android:textStyle="bold"
                                 android:textColor="@color/blue"
-                                android:text="Categorias / actividades del lugar"/>
+                                android:text="Nature, Art and Culture"/>
 
                         </LinearLayout>
 
@@ -197,7 +197,7 @@
                                 android:textSize="15sp"
                                 android:layout_marginBottom="20dp"
                                 android:textColor="@color/white"
-                                android:text="Descripcion del servicio"/>
+                                android:text="A must-visit green oasis in the heart of the city."/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -215,7 +215,7 @@
                                 android:textSize="15sp"
                                 android:layout_marginBottom="20dp"
                                 android:textColor="@color/white"
-                                android:text="Inclued service"/>
+                                android:text="Walking paths, Lakes, Zoo"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -224,7 +224,7 @@
                                 android:textStyle="bold"
                                 android:layout_marginBottom="10dp"
                                 android:textColor="@color/white"
-                                android:text="Precios"/>
+                                android:text="Pricing: This one is free"/>
 
                             <ListView
                                 android:layout_width="match_parent"

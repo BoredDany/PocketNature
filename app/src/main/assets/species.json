@@ -1,0 +1,74 @@
+{
+  "species": [
+    {
+      "weather": "sunny",
+      "specie": "Mammals",
+      "commonName": "Lion",
+      "scientificName": "Panthera leo",
+      "photo": "https://example.com/lion.jpg"
+    },
+    {
+      "weather": "rainy",
+      "specie": "Birds",
+      "commonName": "Hummingbird",
+      "scientificName": "Trochilidae",
+      "photo": "https://example.com/hummingbird.jpg"
+    },
+    {
+      "weather": "cloudy",
+      "specie": "Reptiles",
+      "commonName": "Python",
+      "scientificName": "Pythonidae",
+      "photo": "https://example.com/python.jpg"
+    },
+    {
+      "weather": "sunny",
+      "specie": "Amphibians",
+      "commonName": "Frog",
+      "scientificName": "Anura",
+      "photo": "https://example.com/frog.jpg"
+    },
+    {
+      "weather": "rainy",
+      "specie": "Insects",
+      "commonName": "Butterfly",
+      "scientificName": "Lepidoptera",
+      "photo": "https://example.com/butterfly.jpg"
+    },
+    {
+      "weather": "sunny",
+      "specie": "Mammals",
+      "commonName": "Elephant",
+      "scientificName": "Loxodonta",
+      "photo": "https://example.com/elephant.jpg"
+    },
+    {
+      "weather": "rainy",
+      "specie": "Birds",
+      "commonName": "Eagle",
+      "scientificName": "Accipitridae",
+      "photo": "https://example.com/eagle.jpg"
+    },
+    {
+      "weather": "cloudy",
+      "specie": "Reptiles",
+      "commonName": "Crocodile",
+      "scientificName": "Crocodylidae",
+      "photo": "https://example.com/crocodile.jpg"
+    },
+    {
+      "weather": "sunny",
+      "specie": "Amphibians",
+      "commonName": "Salamander",
+      "scientificName": "Caudata",
+      "photo": "https://example.com/salamander.jpg"
+    },
+    {
+      "weather": "cloudy",
+      "specie": "Insects",
+      "commonName": "Ant",
+      "scientificName": "Formicidae",
+      "photo": "https://example.com/ant.jpg"
+    }
+  ]
+}

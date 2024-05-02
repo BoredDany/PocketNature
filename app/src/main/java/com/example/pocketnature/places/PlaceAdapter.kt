@@ -37,7 +37,7 @@ class PlaceAdapter (private val context: Context?, private val places: List<Plac
             val imageViewWidth = imgPlace.width
             val imageViewHeight = imgPlace.height
             Glide.with(context)
-                .load(R.drawable.nevado)
+                .load(place.photo)
                 .override(imageViewWidth, imageViewHeight) // Cargar la imagen con la resolución correcta
                 .into(imgPlace)
         }

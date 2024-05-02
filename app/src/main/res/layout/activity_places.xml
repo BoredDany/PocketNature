@@ -23,6 +23,7 @@
             android:hint="Location"
             android:paddingLeft="20dp"
             android:layout_marginBottom="18dp"
+            android:entries="@array/business"
             android:textColorHint="#4D000000" />
 
         <RelativeLayout
@@ -62,5 +63,14 @@
         </ListView>
 
     </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer_list"
+        app:headerLayout="@layout/nav_header"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

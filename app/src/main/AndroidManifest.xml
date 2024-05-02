@@ -23,6 +23,12 @@
         android:theme="@style/Theme.PocketNature"
         tools:targetApi="31">
         <activity
+            android:name=".nature.RegisterSpecieActivity"
+            android:exported="false" />
+        <activity
+            android:name=".account.AccountActivity"
+            android:exported="false" />
+        <activity
             android:name=".nature.DetailSpecieActivity"
             android:exported="false" />
         <activity
@@ -93,7 +99,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
     </application>
 
 </manifest>

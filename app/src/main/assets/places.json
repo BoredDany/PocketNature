@@ -1,0 +1,176 @@
+{
+  "places": [
+    {
+      "name": "Central Park",
+      "company": "New York City Department of Parks & Recreation",
+      "linkPlace": "https://www.centralparknyc.org/",
+      "photo": "https://a.cdn-hotels.com/gdcs/staging126/d1145/8842c813-c6de-496a-9caa-fbb97a6a936a.jpg",
+      "latitude": 40.7851,
+      "longitude": -73.9683,
+      "description": "Central Park is an urban park in New York City located between the Upper West and Upper East Sides of Manhattan. It is the most visited urban park in the United States and one of the most filmed locations in the world.",
+      "categories": ["Nature", "Art and culture"],
+      "rating": 4,
+      "recomendations": "A must-visit green oasis in the heart of the city.",
+      "servicesIncluded": "Walking paths, Lakes, Zoo",
+      "price": [
+        {"age": 0, "price": 0.0, "possibleSale": "Free"}
+      ]
+    },
+    {
+      "name": "Eiffel Tower",
+      "company": "Société d'Exploitation de la Tour Eiffel",
+      "linkPlace": "https://www.toureiffel.paris/en",
+      "photo": "https://www.xtrafondos.com/wallpapers/torre-eiffel-en-paris-415.jpg",
+      "latitude": 48.8584,
+      "longitude": 2.2945,
+      "description": "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower.",
+      "categories": ["Art and culture", "Tour packages"],
+      "rating": 5,
+      "recomendations": "Iconic landmark offering stunning views of Paris.",
+      "servicesIncluded": "Observation decks, Restaurants",
+      "price": [
+        {"age": 0, "price": 0.0, "possibleSale": "Free"},
+        {"age": 1, "price": 0.0, "possibleSale": "Free"},
+        {"age": 2, "price": 0.0, "possibleSale": "Free"}
+      ]
+    },
+    {
+      "name": "Grand Canyon National Park",
+      "company": "National Park Service",
+      "linkPlace": "https://www.nps.gov/grca/index.htm",
+      "photo": "https://cdn.audleytravel.com/3696/2641/79/1022076-grand-canyon-national-park.jpg",
+      "latitude": 36.1069,
+      "longitude": -112.1129,
+      "description": "Grand Canyon National Park, in Arizona, is home to much of the immense Grand Canyon, with its layered bands of red rock revealing millions of years of geological history. Viewpoints include Mather Point, Yavapai Observation Station, and architect Mary Colter’s Lookout Studio and her Desert View Watchtower. Lipan Point, with wide views of the canyon and Colorado River, is a popular, especially at sunrise and sunset.",
+      "categories": ["Nature", "Tour packages"],
+      "rating": 4,
+      "recomendations": "Breathtaking natural wonder that must be seen to be believed.",
+      "servicesIncluded": "Hiking trails, Visitor Centers, Camping grounds",
+      "price": [
+        {"age": 0, "price": 0.0, "possibleSale": "Free"},
+        {"age": 1, "price": 0.0, "possibleSale": "Free"},
+        {"age": 2, "price": 0.0, "possibleSale": "Free"}
+      ]
+    },
+    {
+      "name": "Louvre Museum",
+      "company": "Musée du Louvre",
+      "linkPlace": "https://www.louvre.fr/en",
+      "photo": "https://traveldigg.com/wp-content/uploads/2016/06/Louvre-Museum-Pictures.jpg",
+      "latitude": 48.8606,
+      "longitude": 2.3376,
+      "description": "The Louvre Museum is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement.",
+      "categories": ["Art and culture", "Gastronomy"],
+      "rating": 5,
+      "recomendations": "Home to thousands of works of art, including the Mona Lisa.",
+      "servicesIncluded": "Art exhibitions, Cafés, Souvenir Shops",
+      "price": [
+        {"age": 0, "price": 0.0, "possibleSale": "Free"}
+      ]
+    },
+    {
+      "name": "Niagara Falls",
+      "company": "Niagara Parks",
+      "linkPlace": "https://www.niagaraparks.com/",
+      "photo": "https://www.thewowstyle.com/wp-content/uploads/2015/01/Niagara-Falls-Wallpapers-3.jpg",
+      "latitude": 43.0812,
+      "longitude": -79.0742,
+      "description": "Niagara Falls is a group of three waterfalls at the southern end of Niagara Gorge, spanning the border between the province of Ontario in Canada and the state of New York in the United States. The largest of the three is Horseshoe Falls, also known as Canadian Falls, which straddles the international border of the two countries.",
+      "categories": ["Nature", "Tour packages"],
+      "rating": 4,
+      "recomendations": "A natural wonder of the world that must be experienced.",
+      "servicesIncluded": "Boat tours, Observation decks, Visitor Centers",
+      "price": [
+        {"age": 0, "price": 0.0, "possibleSale": "Free"},
+        {"age": 1, "price": 0.0, "possibleSale": "Free"},
+        {"age": 2, "price": 0.0, "possibleSale": "Free"}
+      ]
+    },
+    {
+      "name": "Sagrada Família",
+      "company": "Patronat de la Sagrada Família",
+      "linkPlace": "https://sagradafamilia.org/en",
+      "photo": "https://www.infoescola.com/wp-content/uploads/2020/06/sagrada-familia-580081957.jpg",
+      "latitude": 41.4036,
+      "longitude": 2.1744,
+      "description": "The Basílica de la Sagrada Família is a large unfinished Roman Catholic minor basilica in Barcelona, Catalonia, Spain. Designed by the Catalan architect Antoni Gaudí, the basilica is a UNESCO World Heritage Site.",
+      "categories": ["Art and culture", "Gastronomy"],
+      "rating": 5,
+      "recomendations": "An architectural masterpiece that inspires awe.",
+      "servicesIncluded": "Guided tours, Cafés",
+      "price": [
+        {"age": 0, "price": 0.0, "possibleSale": "Free"},
+        {"age": 1, "price": 0.0, "possibleSale": "Free"},
+        {"age": 2, "price": 0.0, "possibleSale": "Free"}
+      ]
+    },
+    {
+      "name": "Yellowstone National Park",
+      "company": "National Park Service",
+      "linkPlace": "https://www.nps.gov/yell/index.htm",
+      "photo": "https://blog.bozemancvb.com/hs-fs/hubfs/iStock-1028386430_c.jpg?width=8681&name=iStock-1028386430_c.jpg",
+      "latitude": 44.4279,
+      "longitude": -110.5885,
+      "description": "Yellowstone National Park is a wilderness recreation area atop a volcanic hot spot. Mostly in Wyoming, the park spreads into parts of Montana and Idaho too. The park features dramatic canyons, alpine rivers, lush forests, hot springs and gushing geysers, including its most famous, Old Faithful. It's also home to hundreds of animal species, including bears, wolves, bison, elk and antelope.",
+      "categories": ["Nature", "Gastronomy"],
+      "rating": 4,
+      "recomendations": "A must-visit for nature lovers.",
+      "servicesIncluded": "Camping grounds, Visitor Centers, Ranger-led programs",
+      "price": [
+        {"age": 0, "price": 0.0, "possibleSale": "Free"}
+      ]
+    },
+    {
+      "name": "Great Wall of China",
+      "company": "China State Administration of Cultural Heritage",
+      "linkPlace": "http://www.chinadaily.com.cn/a/201908/01/WS5d41d3e1a310cf3e3556417d.html",
+      "photo": "https://cdn.audleytravel.com/3080/2200/79/32215-the-great-wall-beijing.jpg",
+      "latitude": 40.4319,
+      "longitude": 116.5704,
+      "description": "The Great Wall of China is a series of fortifications made of stone, brick, tamped earth, wood, and other materials, generally built along an east-to-west line across the historical northern borders of China to protect the Chinese states and empires against the raids and invasions of the various nomadic groups of the Eurasian Steppe.",
+      "categories": ["Nature", "Art and culture"],
+      "rating": 5,
+      "recomendations": "An engineering marvel and a UNESCO World Heritage Site.",
+      "servicesIncluded": "Guided tours, Souvenir Shops",
+      "price": [
+        {"age": 0, "price": 0.0, "possibleSale": "Free"},
+        {"age": 1, "price": 0.0, "possibleSale": "Free"},
+        {"age": 2, "price": 0.0, "possibleSale": "Free"}
+      ]
+    },
+    {
+      "name": "Amazon Rainforest",
+      "company": "Amazon Rainforest Conservation",
+      "linkPlace": "https://www.worldwildlife.org/places/amazon",
+      "photo": "https://www.jetsetter.com/uploads/sites/7/2018/04/PwVhxGVG.jpeg",
+      "latitude": -3.4653,
+      "longitude": -62.2159,
+      "description": "The Amazon rainforest, covering much of northwestern Brazil and extending into Colombia, Peru and other South American countries, is the world’s largest tropical rainforest, famed for its biodiversity. It’s crisscrossed by thousands of rivers, including the powerful Amazon. River towns, with 19th-century architecture from rubber-boom days, include Brazil’s Manaus and Belém and Peru’s Iquitos and Puerto Maldonado.",
+      "categories": ["Nature", "Tour packages"],
+      "rating": 4,
+      "recomendations": "Explore the world's largest rainforest and its incredible biodiversity.",
+      "servicesIncluded": "Eco-lodges, Jungle tours, Wildlife observation",
+      "price": [
+        {"age": 0, "price": 0.0, "possibleSale": "Free"}
+      ]
+    },
+    {
+      "name": "Giza Pyramid Complex",
+      "company": "Egyptian Ministry of Antiquities",
+      "linkPlace": "https://www.sca-egypt.org/eng/SITE_GIZA_PLATEAU.htm",
+      "photo": "https://2.bp.blogspot.com/-QCsjO_PhGD8/V2URmVl44qI/AAAAAAAAAIA/eGCeOoLRCIo1K-JDp_kQ3-fVNK-5EO55QCLcB/s1600/1d31966a75bdd9c8e2f61fb23b2992810610-Great-Pyramids-of-Giza-picspaper-com-1600x900.jpg",
+      "latitude": 29.9792,
+      "longitude": 31.1342,
+      "description": "The Giza pyramid complex is an archaeological site on the Giza Plateau, on the outskirts of Cairo, Egypt. It includes the three Great Pyramids (Khufu/Cheops, Khafre/Chephren and Menkaure), the Great Sphinx, several cemeteries, a workers' village and an industrial complex.",
+      "categories": ["Art and culture", "Tour packages"],
+      "rating": 4,
+      "recomendations": "Marvel at the ancient wonders of Egypt.",
+      "servicesIncluded": "Guided tours, Camel rides",
+      "price": [
+        {"age": 0, "price": 0.0, "possibleSale": "Free"},
+        {"age": 1, "price": 0.0, "possibleSale": "Free"},
+        {"age": 2, "price": 0.0, "possibleSale": "Free"}
+      ]
+    }
+  ]
+}

@@ -16,7 +16,6 @@ import android.util.TypedValue
 import android.view.MenuItem
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
-import androidx.compose.ui.graphics.Paint
 import androidx.core.app.ActivityCompat
 import com.example.pocketnature.databinding.ActivityAvistamientosBinding
 import com.example.pocketnature.utils.DrawerMenuController
@@ -121,7 +120,11 @@ class AvistamientosActivity : DrawerMenuController() {
         for(s in sightnings){
             var iconID = R.drawable.baseline_location_blue
             val point = GeoPoint(s.latitud, s.longitud)
-            val title = s.nombreComun + ":" + s.clasificacionEspecia + "\n" + s.cantidadIndividuos + " individuals\n" + s.fecha + " - " + s.hora
+            val title = "Nombre:" + s.nombreComun + "\n" +
+                    "Especie:" + s.clasificacionEspecia + "\n" +
+                    "Cantidad:" + s.cantidadIndividuos + " \n" +
+                    "Fecha:" + s.fecha + " \n" +
+                    "Hora:" + s.hora
             when(s.clasificacionEspecia){
                 SpecieCategory.REPTILES ->{ iconID = R.drawable.crocodile_icon }
                 SpecieCategory.MAMMALS ->{ iconID = R.drawable.monkey_icon }
@@ -165,12 +168,6 @@ class AvistamientosActivity : DrawerMenuController() {
         return mutableListOf()
     }
 
-    override fun onPause() {
-        super.onPause()
-        stopLocationUpdates()
-        map!!.onPause()
-    }
-
     fun readJsonFromAssets(context: Context, fileName: String): JSONObject? {
         val json: String?
         try {
@@ -182,6 +179,13 @@ class AvistamientosActivity : DrawerMenuController() {
         }
         return JSONObject(json)
     }
+
+    override fun onPause() {
+        super.onPause()
+        stopLocationUpdates()
+        map!!.onPause()
+    }
+
 
     private fun stopLocationUpdates() {
         mFusedLocationProviderClient.removeLocationUpdates(mLocationCallback)
@@ -328,20 +332,7 @@ class AvistamientosActivity : DrawerMenuController() {
                 myIcon.setBounds(0, 0, canvas.width, canvas.height)
                 myIcon.draw(canvas)
                 val scaledBitmap = Bitmap.createScaledBitmap(bitmap, newWidthPx, newHeightPx, false)
-
-                // Create a new bitmap for the background with the same size as the scaled bitmap
-                val backgroundBitmap = Bitmap.createBitmap(newWidthPx, newHeightPx, Bitmap.Config.ARGB_8888)
-                val backgroundCanvas = Canvas(backgroundBitmap)
-
-                // Draw a white circle on the background bitmap
-                val paint = Paint()
-                paint.color = Color.WHITE
-                backgroundCanvas.drawCircle(newWidthPx / 2f, newHeightPx / 2f, newWidthPx / 2f, paint)
-
-                // Draw the scaled bitmap on top of the background bitmap
-                backgroundCanvas.drawBitmap(scaledBitmap, 0f, 0f, null)
-
-                val bitmapDrawable = BitmapDrawable(resources, backgroundBitmap)
+                val bitmapDrawable = BitmapDrawable(resources, scaledBitmap)
                 marker.icon = bitmapDrawable
             }
             marker.position = p
