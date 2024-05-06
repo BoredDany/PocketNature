@@ -34,6 +34,7 @@ class HomeActivity : DrawerMenuController() {
         //SET WEATHER
         setWeather()
 
+
     }
 
     //INITIALIZE CONTENT

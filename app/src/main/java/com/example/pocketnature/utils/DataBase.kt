@@ -13,7 +13,10 @@ class DataBase {
         const val PATH_PLACES_IMAGES = "places/"
         const val PATH_SIGHTNINGS = "sightnings/"
         const val PATH_SPECIES = "species/"
-
+        const val PATH_USERS = "users/"
+        const val PATH_TOURISTS = "users/tourists"
+        const val PATH_BUSSINESSES = "users/bussinesses"
+        const val PATH_BIOMONITORS = "users/biomonitors"
 
     }
 }

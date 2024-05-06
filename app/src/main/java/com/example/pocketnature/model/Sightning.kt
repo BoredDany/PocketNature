@@ -12,6 +12,8 @@ class Sightning {
     var cantidadIndividuos: Int = 0
     var photo: String = ""
 
+    constructor() {}
+
     constructor(
         fecha: String,
         hora: String,

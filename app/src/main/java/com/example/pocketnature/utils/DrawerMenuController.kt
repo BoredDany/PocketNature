@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.pocketnature.MainActivity
 import com.example.pocketnature.R
 import com.example.pocketnature.account.AccountActivity
 import com.example.pocketnature.events.EventsActivity
@@ -15,6 +16,7 @@ import com.example.pocketnature.nature.StatisticsActivity
 import com.example.pocketnature.places.HomeActivity
 import com.example.pocketnature.places.PlacesActivity
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 open class DrawerMenuController: AppCompatActivity() {
     lateinit var drawerLayout: DrawerLayout
@@ -47,14 +49,26 @@ open class DrawerMenuController: AppCompatActivity() {
 
                 R.id.Statistics -> startActivity(Intent(this, StatisticsActivity::class.java))
 
-                R.id.Logout -> Toast.makeText(applicationContext, "cerrar sesion", Toast.LENGTH_SHORT).show()
+                R.id.Logout -> logoutUser()
 
                 R.id.Account -> startActivity(Intent(this, AccountActivity::class.java))
 
             }
             true
         }
+    }
 
+    fun logoutUser() {
+        val auth = FirebaseAuth.getInstance()
+        auth.signOut()
+
+        // Clear back stack to prevent navigation back to previous screens
+        finishAffinity()  // Clear all activities in the task and exit app
+
+        // Start the LoginActivity after logout
+        startActivity(Intent(this, MainActivity::class.java)) // Replace with your actual login activity
+
+        Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_SHORT).show()
     }
 
 }

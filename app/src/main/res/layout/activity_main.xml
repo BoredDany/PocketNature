@@ -93,6 +93,7 @@
                         android:layout_height="40dp"
                         android:background="@drawable/round_corner_white"
                         android:hint="password"
+                        android:inputType="textPassword"
                         android:paddingLeft="43dp"
                         android:textColorHint="#4D000000" />
 
@@ -125,16 +126,18 @@
                     android:layout_below="@+id/login"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="20dp"
-                    android:text="Forgot your password?"
+                    android:text="or"
                     android:textColor="@color/blue" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <Button
+                    android:id="@+id/btnSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
                     android:layout_below="@+id/forgotPassword"
                     android:layout_centerHorizontal="true"
-                    android:text="Don't have an account?"
-                    android:textColor="@color/blue" />
+                    android:text="sign up"
+                    android:textColor="@color/white"
+                    android:background="@drawable/round_corner_blue" />
 
             </RelativeLayout>
 

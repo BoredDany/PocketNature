@@ -84,22 +84,13 @@
             android:textColorHint="#4D000000" />
 
         <EditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/round_corner_white"
-            android:hint="email"
-            android:paddingStart="20dp"
-            android:textColorHint="#4D000000" />
-
-        <EditText
             android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/round_corner_white"
             android:hint="phone"
+            android:inputType="phone"
             android:paddingStart="20dp"
             android:textColorHint="#4D000000" />
 
@@ -114,31 +105,33 @@
             android:textColorHint="#4D000000" />
 
 
-        <FrameLayout
+        <RelativeLayout
             android:id="@+id/birthdayLay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom ="20dp">
 
-            <EditText
+            <TextView
                 android:id="@+id/birthday"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
                 android:hint="birthday"
-                android:paddingLeft="43dp"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
                 android:textColorHint="#4D000000" />
 
-            <ImageView
-                android:id="@+id/calendarLogo"
+            <ImageButton
+                android:id="@+id/btnCalendar"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/round_corner_white"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/round_corner_blue"
                 android:padding="5dp"
-                app:srcCompat="@drawable/baseline_calendar_blue"
-                tools:srcCompat="@drawable/baseline_calendar_blue" />
+                app:srcCompat="@drawable/baseline_calendar_white"
+                tools:srcCompat="@drawable/baseline_calendar_white" />
 
-        </FrameLayout>
+        </RelativeLayout>
 
         <FrameLayout
             android:id="@+id/usernameLay"
@@ -147,7 +140,7 @@
             android:layout_marginBottom="20dp">
 
             <EditText
-                android:id="@+id/username"
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
@@ -178,6 +171,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/round_corner_white"
                 android:hint="password"
+                android:inputType="textPassword"
                 android:paddingLeft="43dp"
                 android:textColorHint="#4D000000" />
 

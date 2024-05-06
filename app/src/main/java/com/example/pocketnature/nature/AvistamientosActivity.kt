@@ -66,7 +66,11 @@ class AvistamientosActivity : DrawerMenuController() {
     private var searchMarker: Marker? = null
     private var sightningMarker: Marker? = null
     var mGeocoder: Geocoder? = null
-    val jsonFile = "sightnings.json"
+    val TAG = "FIREBASE"
+
+    //DB
+    private val database = FirebaseDatabase.getInstance()
+    private lateinit var myRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -115,69 +119,43 @@ class AvistamientosActivity : DrawerMenuController() {
             }
         }
 
+        var icon: Int = R.drawable.baseline_location_blue
+        var title: String = ""
         //recorrer lista de avistamientos y createMarkerRetMark y poner listenner
-        val sightnings = getSightings ()
-        for(s in sightnings){
-            var iconID = R.drawable.baseline_location_blue
-            val point = GeoPoint(s.latitud, s.longitud)
-            val title = "Nombre:" + s.nombreComun + "\n" +
-                    "Especie:" + s.clasificacionEspecia + "\n" +
-                    "Cantidad:" + s.cantidadIndividuos + " \n" +
-                    "Fecha:" + s.fecha + " \n" +
-                    "Hora:" + s.hora
-            when(s.clasificacionEspecia){
-                SpecieCategory.REPTILES ->{ iconID = R.drawable.crocodile_icon }
-                SpecieCategory.MAMMALS ->{ iconID = R.drawable.monkey_icon }
-                SpecieCategory.BIRDS ->{ iconID = R.drawable.bird_icon }
-                SpecieCategory.AMPHIBIANS ->{ iconID = R.drawable.frog_icon }
-                SpecieCategory.INSECTS ->{ iconID = R.drawable.bug_icon }
+        myRef = database.getReference(DataBase.PATH_SIGHTNINGS)
+        myRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (singleSnapshot in dataSnapshot.children) {
+                    val sightning = singleSnapshot.getValue(Sightning::class.java)
+                    if(sightning != null){
+                        Log.i(TAG, "Encontró avistamiento: " + sightning.nombreComun)
+                        when(sightning.clasificacionEspecia){
+                            SpecieCategory.REPTILES -> icon = R.drawable.crocodile_icon
+                            SpecieCategory.MAMMALS -> icon = R.drawable.monkey_icon
+                            SpecieCategory.INSECTS -> icon = R.drawable.bug_icon
+                            SpecieCategory.AMPHIBIANS -> icon = R.drawable.frog_icon
+                            SpecieCategory.BIRDS -> icon = R.drawable.bird_icon
+                        }
+                        title = "Category: " + sightning.clasificacionEspecia +
+                                "\nNumber: " + sightning.cantidadIndividuos +
+                                "\nSpecie: " + sightning.nombreComun +
+                                "\nDate: " + sightning.fecha +
+                                "\nHour: " + sightning.hora
+
+                        if (map != null) {
+                            sightningMarker = createMarkerRetMark(GeoPoint(sightning.latitud, sightning.longitud), title, null, icon)
+                            sightningMarker.let { map!!.overlays.add(it) }
+                        }
+
+                    }
+
+                }
             }
-            sightningMarker = createMarkerRetMark(point, title, null, iconID)
-            sightningMarker?.let { map!!.overlays.add(it) }
-        }
-
-    }
-
-    private fun getSightings(): MutableList<Sightning>{
-        val jsonObject = readJsonFromAssets(this, jsonFile)
-
-        if (jsonObject != null) {
-            val sightingsList = mutableListOf<Sightning>()
-
-            jsonObject.keys().forEach { key ->
-                val sightingObject = jsonObject.getJSONObject(key)
-                val sighting = Sightning(
-                    sightingObject.getString("fecha"),
-                    sightingObject.getString("hora"),
-                    sightingObject.getDouble("latitud"),
-                    sightingObject.getDouble("longitud"),
-                    sightingObject.getString("clima"),
-                    sightingObject.getString("clasificacionEspecia"),
-                    sightingObject.getString("nombreComun"),
-                    sightingObject.getString("scientificName"),
-                    sightingObject.getInt("cantidadIndividuos"),
-                    sightingObject.getString("photo")
-                )
-                sightingsList.add(sighting)
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.w(TAG, "error en la consulta", databaseError.toException())
             }
-            // Aquí puedes hacer lo que quieras con la lista de avistamientos
-            return sightingsList
-        } else {
-            println("Error al leer el archivo JSON desde assets.")
-        }
-        return mutableListOf()
-    }
+        })
 
-    fun readJsonFromAssets(context: Context, fileName: String): JSONObject? {
-        val json: String?
-        try {
-            val inputStream = context.assets.open(fileName)
-            json = inputStream.bufferedReader().use { it.readText() }
-        } catch (ioException: IOException) {
-            ioException.printStackTrace()
-            return null
-        }
-        return JSONObject(json)
     }
 
     override fun onPause() {
