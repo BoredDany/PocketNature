@@ -3,6 +3,7 @@ package com.example.pocketnature.nature
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.AdapterView
 import com.example.pocketnature.databinding.ActivitySpeciesBinding
 import com.example.pocketnature.model.Place
 import com.example.pocketnature.model.Price
@@ -28,6 +29,12 @@ class SpeciesActivity : DrawerMenuController() {
         val adapter = SpeciesAdapter(this, getSpecies())
 
         binding.species.adapter = adapter
+
+        binding.species.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            val selectedSpecie = adapter.getItem(position) as Specie
+            val intent = Intent(this, DetailSpecieActivity::class.java);
+            startActivity(intent)
+        }
 
         binding.btnRegisterSpecie.setOnClickListener {
             startActivity(Intent(this, RegisterSpecieActivity::class.java))

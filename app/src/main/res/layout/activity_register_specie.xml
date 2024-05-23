@@ -199,17 +199,6 @@
                 android:paddingStart="20dp"
                 android:textColorHint="#4D000000" />
 
-            <EditText
-                android:id="@+id/number"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/round_corner_white"
-                android:hint="Number of individuals"
-                android:inputType="number"
-                android:paddingStart="20dp"
-                android:textColorHint="#4D000000" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

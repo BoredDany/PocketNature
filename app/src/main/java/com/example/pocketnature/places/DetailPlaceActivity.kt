@@ -21,7 +21,7 @@ class DetailPlaceActivity : DrawerMenuController() {
         val imageViewWidth = imgPlace.width
         val imageViewHeight = imgPlace.height
         Glide.with(this)
-            .load("https://a.cdn-hotels.com/gdcs/staging126/d1145/8842c813-c6de-496a-9caa-fbb97a6a936a.jpgz")
+            .load("https://tierracolombiana.org/wp-content/uploads/2018/05/3.jpg")
             .override(imageViewWidth, imageViewHeight) // Cargar la imagen con la resolución correcta
             .into(imgPlace)
 
